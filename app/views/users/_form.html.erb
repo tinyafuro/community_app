@@ -5,7 +5,7 @@
 <!-- form_withを使うと送信先を自動で判別されて、エラー時には/usersのルーティングで処理されてしまい、結果エラー表示されなくなる -->
 <%= form_for(@user, url: yield(:url)) do |f| %>
 
-  <%= render 'shared/error_messages' %>
+  <%= render 'shared/error_messages', object: f.object %>
 
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>
