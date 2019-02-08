@@ -15,7 +15,14 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   
   # get 'static_pages/home'
   # get 'static_pages/help'

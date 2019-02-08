@@ -28,6 +28,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", user_path(@user)
     assert_select "a[href=?]", edit_user_path(@user)
     assert_select "a[href=?]", logout_path
+    assert_select 'div.stats'   #フォロワー数統計情報
   end
 
 end
